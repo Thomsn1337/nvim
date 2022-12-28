@@ -31,6 +31,9 @@ key("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 key("n", "<S-l>", ":bnext<CR>", opts)
 key("n", "<S-h>", ":bprevious<CR>", opts)
 
+-- Toggle NvimTree
+key("n", "<Leader>e", ":NvimTreeToggle<CR>", opts)
+
 -- Insert --
 -- Press jk fast to exit insert mode 
 key("i", "jk", "<ESC>", opts)

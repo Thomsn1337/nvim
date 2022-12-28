@@ -30,6 +30,14 @@ return require('packer').startup(function(use)
         requires = 'nvim-tree/nvim-web-devicons'
     }
 
+    -- NvimTree, file explorer
+    use {
+        'nvim-tree/nvim-tree.lua',
+        requires = {
+        'nvim-tree/nvim-web-devicons', -- optional, for file icons
+        },
+    }
+
     if packer_bootstrap then
         require('packer').sync()
     end
