@@ -15,6 +15,21 @@ return require('packer').startup(function(use)
     -- Packer handles itself
     use 'wbthomason/packer.nvim'
 
+    -- Colorscheme
+    use 'shaunsingh/nord.nvim'
+
+    -- Lualine, statusline with powerline effects
+    use {
+        'nvim-lualine/lualine.nvim',
+        requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+    }
+
+    -- Bufferline, shows open buffers
+    use{
+        'akinsho/bufferline.nvim',
+        requires = 'nvim-tree/nvim-web-devicons'
+    }
+
     if packer_bootstrap then
         require('packer').sync()
     end
