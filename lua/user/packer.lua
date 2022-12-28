@@ -18,6 +18,24 @@ return require('packer').startup(function(use)
     -- Colorscheme
     use 'shaunsingh/nord.nvim'
 
+    --Autopairs, automatic bracket pairs
+    use 'windwp/nvim-autopairs'
+
+    -- Completion
+    use 'hrsh7th/nvim-cmp'
+    use 'hrsh7th/cmp-buffer'
+    use 'hrsh7th/cmp-path'
+    use 'hrsh7th/cmp-cmdline'
+    use 'saadparwaiz1/cmp_luasnip'
+
+    -- NvimTree, file explorer
+    use {
+        'nvim-tree/nvim-tree.lua',
+        requires = {
+        'nvim-tree/nvim-web-devicons', -- optional, for file icons
+        },
+    }
+
     -- Lualine, statusline with powerline effects
     use {
         'nvim-lualine/lualine.nvim',
@@ -29,24 +47,13 @@ return require('packer').startup(function(use)
         'akinsho/bufferline.nvim',
         requires = 'nvim-tree/nvim-web-devicons'
     }
-
-    -- NvimTree, file explorer
-    use {
-        'nvim-tree/nvim-tree.lua',
-        requires = {
-        'nvim-tree/nvim-web-devicons', -- optional, for file icons
-        },
-    }
-
-    --Autopairs, automatic bracket pairs
-    use 'windwp/nvim-autopairs'
-
-    -- IndentBlankline, indent visualization
-    use 'lukas-reineke/indent-blankline.nvim'
-
+    
     -- Treesitter, code highlighter
     use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
     use 'p00f/nvim-ts-rainbow'
+
+    -- IndentBlankline, indent visualization
+    use 'lukas-reineke/indent-blankline.nvim'
 
     if packer_bootstrap then
         require('packer').sync()
