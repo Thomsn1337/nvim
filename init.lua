@@ -10,4 +10,4 @@ require("user.plugins.indent-blankline")
 require("user.plugins.autopairs")
 require("user.plugins.bufferline")
 
-require("user.lsp.cmp")
+require("user.lsp")
