@@ -38,6 +38,16 @@ return require('packer').startup(function(use)
         },
     }
 
+    --Autopairs, automatic bracket pairs
+    use 'windwp/nvim-autopairs'
+
+    -- IndentBlankline, indent visualization
+    use 'lukas-reineke/indent-blankline.nvim'
+
+    -- Treesitter, code highlighter
+    use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
+    use 'p00f/nvim-ts-rainbow'
+
     if packer_bootstrap then
         require('packer').sync()
     end
