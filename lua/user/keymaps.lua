@@ -58,3 +58,4 @@ key("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 
 -- Telescope
 key("n", "<Leader>ff", ":Telescope find_files <CR>", opts)
+key("n", "<Leader>fg", ":Telescope live_grep <CR>", opts)
