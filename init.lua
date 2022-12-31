@@ -11,5 +11,6 @@ require("user.plugins.autopairs")
 require("user.plugins.bufferline")
 require("user.plugins.toggleterm")
 require("user.plugins.telescope")
+require("user.plugins.dashboard")
 
 require("user.lsp")
