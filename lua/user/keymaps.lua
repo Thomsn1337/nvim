@@ -55,3 +55,6 @@ key("x", "J", ":move '>+1<CR>gv-gv", opts)
 key("x", "K", ":move '<-2<CR>gv-gv", opts)
 key("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
 key("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
+
+-- Telescope
+key("n", "<Leader>ff", ":Telescope find_files <CR>", opts)

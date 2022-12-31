@@ -34,9 +34,9 @@ return require('packer').startup(function(use)
 
     -- LSP
     use {
-    "williamboman/mason.nvim",
-    "williamboman/mason-lspconfig.nvim",
-    "neovim/nvim-lspconfig",
+        "williamboman/mason.nvim",
+        "williamboman/mason-lspconfig.nvim",
+        "neovim/nvim-lspconfig",
     }
 
     -- NvimTree, file explorer
@@ -68,6 +68,12 @@ return require('packer').startup(function(use)
 
     -- ToggleTerm, terminal buffer that can be toggled
     use {"akinsho/toggleterm.nvim", tag = '*'}
+
+    -- Telescope, fuzzy finder
+    use {
+      'nvim-telescope/telescope.nvim', tag = '0.1.0',
+      requires = { {'nvim-lua/plenary.nvim'} }
+    }
 
     if packer_bootstrap then
         require('packer').sync()
