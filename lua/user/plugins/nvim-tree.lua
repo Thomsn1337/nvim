@@ -16,5 +16,15 @@ nvim_tree.setup {
         width = 30,
         hide_root_folder = false,
         side = "left",
+        mappings = {
+            list = {
+                {key = "<C-]>", action = ""},
+                {key = "<C-d>", action = "cd"}
+            }
+        }
+    },
+    update_focused_file = {
+        enable = true,
+        update_cwd = true,
     }
 }

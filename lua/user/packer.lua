@@ -29,6 +29,9 @@ return require('packer').startup(function(use)
     use 'saadparwaiz1/cmp_luasnip'
     use 'hrsh7th/cmp-nvim-lsp'
 
+    -- LuaSnip, snippet engine
+    use({"L3MON4D3/LuaSnip", tag = "v<CurrentMajor>.*"})
+
     -- LSP
     use {
     "williamboman/mason.nvim",
@@ -62,6 +65,9 @@ return require('packer').startup(function(use)
 
     -- IndentBlankline, indent visualization
     use 'lukas-reineke/indent-blankline.nvim'
+
+    -- ToggleTerm, terminal buffer that can be toggled
+    use {"akinsho/toggleterm.nvim", tag = '*'}
 
     if packer_bootstrap then
         require('packer').sync()

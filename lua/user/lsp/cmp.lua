@@ -1,5 +1,5 @@
 local cmp = require("cmp")
-local luasnip = require("cmp_luasnip")
+local luasnip = require("luasnip")
 
 local kind_icons = {
   Text = "",
