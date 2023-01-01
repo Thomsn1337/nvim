@@ -24,3 +24,4 @@ db.custom_center = {
   {icon = " ", desc = "Search for text            ", shortcut = "SPC f g", action = "Telescope live_grep"},
   {icon = " ", desc = "Recent files               ", shortcut = "SPC f r", action = "Telescope oldfiles"},
   {icon = " ", desc = "Open config                ", shortcut = "       ", action = "edit ~/.config/nvim/init.lua"}
+}
