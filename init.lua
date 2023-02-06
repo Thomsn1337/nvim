@@ -1,6 +1,6 @@
+require("user.packer")
 require("user.settings")
 require("user.keymaps")
-require("user.packer")
 
 require("user.plugins.nord")
 require("user.plugins.nvim-tree")
