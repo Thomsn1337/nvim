@@ -12,3 +12,4 @@ for k, v in pairs(options) do
 end
 
 require("nord").set()
+require('onedark').load()

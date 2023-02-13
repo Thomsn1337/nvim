@@ -17,6 +17,7 @@ return require('packer').startup(function(use)
 
     -- Colorscheme
     use 'shaunsingh/nord.nvim'
+    use 'navarasu/onedark.nvim'
 
     --Autopairs, automatic bracket pairs
     use 'windwp/nvim-autopairs'
@@ -71,11 +72,9 @@ return require('packer').startup(function(use)
 
     -- Telescope, fuzzy finder
     use {
-      'nvim-telescope/telescope.nvim', tag = '0.1.0',
-      requires = { {'nvim-lua/plenary.nvim'} }
+        'nvim-telescope/telescope.nvim', tag = '0.1.0',
+        requires = { {'nvim-lua/plenary.nvim'} }
     }
-
-    use 'glepnir/dashboard-nvim'
 
     if packer_bootstrap then
         require('packer').sync()
