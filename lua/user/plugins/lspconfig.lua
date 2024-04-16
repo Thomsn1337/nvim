@@ -11,9 +11,9 @@ return {
                 },
             },
             "williamboman/mason-lspconfig.nvim",
-            "jay-babu/mason-null-ls.nvim",
 
             "nvimtools/none-ls.nvim",
+            "jay-babu/mason-null-ls.nvim",
 
             { "folke/neodev.nvim", opts = {} },
         },
@@ -71,6 +71,7 @@ return {
                 tsserver = {},
                 html = {},
                 emmet_ls = {},
+                cssls = {},
             }
 
             require("mason").setup()
@@ -87,12 +88,26 @@ return {
 
             require("mason-null-ls").setup({
                 automatic_installation = false,
-                ensure_installed = { "stylua", "prettier" },
+                ensure_installed = { "stylua", "prettier", "markdownlint", "mdformat" },
                 handlers = {},
             })
 
+            local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
+
             require("null-ls").setup({
                 sources = {},
+                on_attach = function(client, bufnr)
+                    if client.supports_method("textDocument/formatting") then
+                        vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+                        vim.api.nvim_create_autocmd("BufWritePre", {
+                            group = augroup,
+                            buffer = bufnr,
+                            callback = function()
+                                vim.lsp.buf.format()
+                            end,
+                        })
+                    end
+                end,
             })
         end,
     },

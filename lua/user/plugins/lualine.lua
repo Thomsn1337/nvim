@@ -6,5 +6,5 @@ return {
     opts = {
         icons_enabled = true,
         theme = "catppuccin",
-    }
+    },
 }

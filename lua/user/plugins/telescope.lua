@@ -27,6 +27,7 @@ return {
                         ["<C-j>"] = actions.move_selection_next,
                         ["<C-k>"] = actions.move_selection_previous,
                         ["<C-h>"] = actions.which_key,
+                        ["<C-d>"] = actions.delete_buffer,
                     },
                 },
             },
