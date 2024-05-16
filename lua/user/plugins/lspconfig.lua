@@ -17,6 +17,7 @@ return {
 
             { "folke/neodev.nvim", opts = {} },
         },
+
         config = function()
             vim.api.nvim_create_autocmd("LspAttach", {
                 group = vim.api.nvim_create_augroup("lsp-attach", { clear = true }),
@@ -68,10 +69,17 @@ return {
                         },
                     },
                 },
-                tsserver = {},
+                tsserver = {
+                    settings = {
+                        implicitProjectConfiguration = {
+                            checkJs = true,
+                        },
+                    },
+                },
                 html = {},
                 emmet_ls = {},
                 cssls = {},
+                eslint = {},
             }
 
             require("mason").setup()
@@ -94,7 +102,8 @@ return {
 
             local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
-            require("null-ls").setup({
+            local null_ls = require("null-ls")
+            null_ls.setup({
                 sources = {},
                 on_attach = function(client, bufnr)
                     if client.supports_method("textDocument/formatting") then
