@@ -9,4 +9,7 @@ require("lazy").setup("user.plugins", {
     spec = "user.plugins",
     change_detection = { notify = false },
     colorscheme = "catppuccin",
+    ui = {
+        border = "rounded",
+    },
 })
